@@ -8,7 +8,7 @@ import netP5.*;
 OscP5 oscP5;
 NetAddress myRemoteLocation;
 int lastMillis=0;
-int millisThreshold=1000;
+int millisThreshold=1000/30;
 
 /**
   ARDUINO CONSTANTS
@@ -29,7 +29,7 @@ void setup() {
   size(470, 200);
   
   println(Arduino.list());
-  arduino = new Arduino(this, Arduino.list()[0], 57600);
+  arduino = new Arduino(this, Arduino.list()[5], 57600);
   
   for (int i = 0; i <= 13; i++)
     arduino.pinMode(i, Arduino.INPUT);
